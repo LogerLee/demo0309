@@ -10,6 +10,7 @@
         style="@style/video_view_style" />
     
     <TextView
+        android:id="@+id/tv_splash_timer"
         android:textSize="16dp"
         android:textColor="@color/color_ffffff"
         android:layout_gravity="right"
