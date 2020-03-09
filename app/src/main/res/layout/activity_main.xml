@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_above="@+id/fl_main_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fac_main_home"
+            android:backgroundTint="@color/color_theme_blue"
+            app:borderWidth="0dp"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="@dimen/dp_40"
+            android:layout_marginRight="@dimen/dp_40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+    
+    
+    <FrameLayout
+        android:id="@+id/fl_main_bottom"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_bottombar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_58">
+
+        <RadioGroup
+            android:id="@+id/rg_main_top"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@+id/rb_main_s"
+                android:drawableTop="@drawable/selector_main_top_s"
+                android:text="首页"
+                style="@style/main_rb_bottombar_top" />
+
+            <RadioButton
+                android:id="@+id/rb_main_o"
+                android:drawableTop="@drawable/selector_main_top_o"
+                android:text="社交"
+                style="@style/main_rb_bottombar_top"/>
+
+            <RadioButton
+                android:id="@+id/rb_main_l"
+                android:drawableTop="@drawable/selector_main_top_l"
+                android:text="商场"
+                style="@style/main_rb_bottombar_top" />
+
+            <RadioButton
+                android:id="@+id/rb_main_e"
+                android:drawableTop="@drawable/selector_main_top_e"
+                android:text="我的"
+                style="@style/main_rb_bottombar_top" />
+    </RadioGroup>
+    </FrameLayout>
+
+</RelativeLayout>
