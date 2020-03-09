@@ -29,9 +29,14 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.fl_main_bottom)
     FrameLayout flMainBottom;
 
-    @Override
+    /* @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+    } */
+
+    @Override
+    public void afterBindView() {
 
     }
 

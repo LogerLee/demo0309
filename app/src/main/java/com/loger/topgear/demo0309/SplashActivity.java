@@ -7,13 +7,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.loger.topgear.demo0309.mvp.ISplashActivityContract;
+
 import java.io.File;
 
 import butterknife.BindView;
 
 @Viewinject(mainlayoutid = R.layout.activity_splash)
 
-public class SplashActivity extends BaseActivity {
+public class SplashActivity extends BaseActivity implements ISplashActivityContract.Iview{
 
     @BindView(R.id.vv_play)
     FullScreenVideo mVideoView;
@@ -21,10 +23,10 @@ public class SplashActivity extends BaseActivity {
     TextView mTvTimer;
 
 
-    private SplashTimerPresenter timerPresenter;
+    private ISplashActivityContract.IPresenter timerPresenter;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+   /* @Override
+    protected void onCreate(Bundle savedInstanceState) {//onCreate方法已被调到afterBindView
         super.onCreate(savedInstanceState);
 
         initTimerPresenter();
@@ -35,6 +37,15 @@ public class SplashActivity extends BaseActivity {
         //可以把初始化Timer及相关内容抽离到Presenter层
        // initTimer();
 
+    }*/
+
+    @Override
+    public void afterBindView() {
+        initTimerPresenter();
+
+        //被整合、抽到onCreate出去的函数
+        initListener();
+        initView();
     }
 
     private void initTimerPresenter() {
@@ -50,7 +61,6 @@ public class SplashActivity extends BaseActivity {
             public void onTicker(int time) {
                 mTvTimer.setText(time + "s");
             }
-
             @Override
             public void onFinish() {
                 mTvTimer.setText("Skip");
@@ -76,6 +86,7 @@ public class SplashActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                finish();
             }
         });
 
@@ -87,11 +98,12 @@ public class SplashActivity extends BaseActivity {
         });
     }
 
-    protected void onDestroy(){
+    /*protected void onDestroy(){
         super.onDestroy();
-        timerPresenter.cancel();
-    }
+        timerPresenter.onDestroy();
 
+    }*/
+    @Override
     public void setTvTimer(String s) {
         mTvTimer.setText(s);
     }

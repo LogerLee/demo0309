@@ -4,9 +4,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import com.loger.topgear.demo0309.mvp.view.LifeCircleMvpActivity;
+
 import butterknife.ButterKnife;
 
-public class BaseActivity extends AppCompatActivity{
+public abstract class BaseActivity extends LifeCircleMvpActivity{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,12 +18,20 @@ public class BaseActivity extends AppCompatActivity{
             int mainlayoutid = annotation.mainlayoutid();
             if (mainlayoutid > 0){
                 setContentView(mainlayoutid);
-                ButterKnife.bind(this);
+                bindView();
+                afterBindView();
             }else {
                 throw new RuntimeException("mainlayoutid < 0");
             }
         }else {
             throw new RuntimeException("annotation = null");
         }
+    }
+    //设计模式：模板方法
+    public abstract void afterBindView();
+
+    //View的依赖注入绑定
+    private void bindView() {
+        ButterKnife.bind(this);
     }
 }
