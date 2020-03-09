@@ -6,4 +6,5 @@
     <color name="color_ffffff">#ffffffff</color>
     <color name="color_grey_30">#B2bfbfbf</color>
     <color name="color_bottombar">#F0FFFF</color>
+    <color name="color_theme_blue">#1296db</color>
 </resources>
