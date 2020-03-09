@@ -8,6 +8,18 @@
     <com.loger.topgear.demo0309.FullScreenVideo
         android:id="@+id/vv_play"
         style="@style/video_view_style" />
-
+    
+    <TextView
+        android:textSize="16dp"
+        android:textColor="@color/color_ffffff"
+        android:layout_gravity="right"
+        android:gravity="center"
+        android:text="Skip"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="38dp"
+        android:background="@drawable/shape_splash"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        />
 
 </FrameLayout>
