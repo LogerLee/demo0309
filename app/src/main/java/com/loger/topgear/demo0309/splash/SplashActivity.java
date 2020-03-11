@@ -1,13 +1,15 @@
-package com.loger.topgear.demo0309;
+package com.loger.topgear.demo0309.splash;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.loger.topgear.demo0309.mvp.ISplashActivityContract;
+import com.loger.topgear.demo0309.base.BaseActivity;
+import com.loger.topgear.demo0309.main.MainActivity;
+import com.loger.topgear.demo0309.R;
+import com.loger.topgear.demo0309.base.Viewinject;
 
 import java.io.File;
 
@@ -36,7 +38,6 @@ public class SplashActivity extends BaseActivity implements ISplashActivityContr
         initView();
         //可以把初始化Timer及相关内容抽离到Presenter层
        // initTimer();
-
     }*/
 
     @Override

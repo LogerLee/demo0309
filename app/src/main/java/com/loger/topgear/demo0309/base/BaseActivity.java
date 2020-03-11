@@ -1,8 +1,7 @@
-package com.loger.topgear.demo0309;
+package com.loger.topgear.demo0309.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 
 import com.loger.topgear.demo0309.mvp.view.LifeCircleMvpActivity;
 

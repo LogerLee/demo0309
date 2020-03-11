@@ -1,4 +1,4 @@
-package com.loger.topgear.demo0309;
+package com.loger.topgear.demo0309.splash;
 
 import android.os.Handler;
 

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     >
 
-    <com.loger.topgear.demo0309.FullScreenVideo
+    <com.loger.topgear.demo0309.splash.FullScreenVideo
         android:id="@+id/vv_play"
         style="@style/video_view_style" />
     

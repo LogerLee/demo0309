@@ -1,9 +1,7 @@
-package com.loger.topgear.demo0309;
+package com.loger.topgear.demo0309.splash;
 
 import android.util.Log;
 
-import com.loger.topgear.demo0309.mvp.IMvpView;
-import com.loger.topgear.demo0309.mvp.ISplashActivityContract;
 import com.loger.topgear.demo0309.mvp.base.BaseMvpPresenter;
 
 public class SplashTimerPresenter extends BaseMvpPresenter<ISplashActivityContract.Iview> implements ISplashActivityContract.IPresenter{
