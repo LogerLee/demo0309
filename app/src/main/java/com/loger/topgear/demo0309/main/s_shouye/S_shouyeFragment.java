@@ -1,8 +1,11 @@
 package com.loger.topgear.demo0309.main.s_shouye;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +14,10 @@ import android.widget.TextView;
 import com.loger.topgear.demo0309.R;
 import com.loger.topgear.demo0309.base.BaseFragment;
 import com.loger.topgear.demo0309.base.Viewinject;
+import com.loger.topgear.demo0309.base.BaseFragment;
+import com.loger.topgear.demo0309.main.s_shouye.adapter.S_shouyeAdapter;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,24 +32,39 @@ public class S_shouyeFragment extends BaseFragment {
     CollapsingToolbarLayout sShouyeCollapsingToolbarLayout;
     @BindView(R.id.s_shouye_appbarlayout)
     AppBarLayout sShouyeAppbarlayout;
-    Unbinder unbinder;
+    @BindView(R.id.s_shouye_recyclerview)
+    RecyclerView sShouyeRecyclerview;
+
 
     @Override
     public void afterBindView() {
+        initRecyclerView();
+        initListener();
 
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        unbinder = ButterKnife.bind(this, rootView);
-        return rootView;
+    private void initRecyclerView() {
+        sShouyeRecyclerview.setLayoutManager(new LinearLayoutManager(mContex));//setLayoutManager一个必要的api,它能做很多布局
+        //适配器设计模式，把相应的数据Data展示到不同的布局View
+        ArrayList<String> data = new ArrayList<>();
+        for (int i = 0; i <15 ; i++) {
+            data.add("首页欢迎你");
+        }
+        sShouyeRecyclerview.setAdapter(new S_shouyeAdapter(data));//setAdapter也是一个必要的api
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
+    private void initListener() {
+        //监听AppBarLayout
+        sShouyeAppbarlayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int i) {
+                if (-i < appBarLayout.getMeasuredHeight() / 2) {
+                    tvNihao.setVisibility(View.INVISIBLE);
+                } else {
+                    tvNihao.setVisibility(View.VISIBLE);
+                }
+            }
+        });
     }
+
 }
