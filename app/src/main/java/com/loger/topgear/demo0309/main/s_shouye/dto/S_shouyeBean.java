@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class S_shouyeBean {
 
-    private int mItemType;
+    private int mItemType = IS_shouyeItemType.VERTICAL;
     private String mDec;
     private boolean isShowImg;   //是否展示图片
-    private ArrayList<S_shouyeBean> data;
+    private ArrayList<S_shouyeBean> data;   //横向列表
 
     public int getmItemType() {
         return mItemType;
@@ -44,7 +44,10 @@ public class S_shouyeBean {
         this.data = data;
         return this;
     }
-
+    public interface IS_shouyeItemType{
+        int VERTICAL = 0;
+        int HORIZANTAL = 1;
+    }
 
 
 }

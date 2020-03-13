@@ -16,6 +16,7 @@ import com.loger.topgear.demo0309.base.BaseFragment;
 import com.loger.topgear.demo0309.base.Viewinject;
 import com.loger.topgear.demo0309.base.BaseFragment;
 import com.loger.topgear.demo0309.main.s_shouye.adapter.S_shouyeAdapter;
+import com.loger.topgear.demo0309.main.s_shouye.dto.S_shouyeDataManager;
 
 import java.util.ArrayList;
 
@@ -46,11 +47,11 @@ public class S_shouyeFragment extends BaseFragment {
     private void initRecyclerView() {
         sShouyeRecyclerview.setLayoutManager(new LinearLayoutManager(mContex));//setLayoutManager一个必要的api,它能做很多布局
         //适配器设计模式，把相应的数据Data展示到不同的布局View
-        ArrayList<String> data = new ArrayList<>();
+        /*ArrayList<String> data = new ArrayList<>();
         for (int i = 0; i <15 ; i++) {
             data.add("首页欢迎你");
-        }
-        sShouyeRecyclerview.setAdapter(new S_shouyeAdapter(data));//setAdapter也是一个必要的api
+        }*/
+        sShouyeRecyclerview.setAdapter(new S_shouyeAdapter(mContex, S_shouyeDataManager.getData(),false));//setAdapter也是一个必要的api
     }
 
     private void initListener() {

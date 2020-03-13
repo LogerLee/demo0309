@@ -33,7 +33,7 @@
                     android:visibility="gone"
                     android:gravity="center"
                     android:layout_gravity="center"
-                    android:text="你好"
+                    android:text="你好 "
                     android:textColor="@color/color_ffffff"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />

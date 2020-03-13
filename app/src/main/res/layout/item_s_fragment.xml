@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/item_shouye_hor_iv"
+        android:scaleType="centerCrop"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        android:layout_margin="8dp"
+        android:src="@mipmap/hoz1"/>
 
     <TextView
         android:id="@+id/item_shouye_tv"
         android:background="@color/color_grey_30"
-        android:layout_margin="10dp"
+        android:layout_margin="8dp"
         android:gravity="center"
         android:layout_gravity="center"
         android:text="首页条目"
@@ -15,4 +24,4 @@
         android:layout_height="@dimen/dp_40"
         />
 
-</RelativeLayout>
+</LinearLayout>
